@@ -1,0 +1,302 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<diagram program="umlet" version="15.0.0">
+  <zoom_level>2</zoom_level>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>246</x>
+      <y>136</y>
+      <w>72</w>
+      <h>84</h>
+    </coordinates>
+    <panel_attributes>_Questao_
+--
+- id: Long
+- titulo: String
+- texto: String
+- opcoes: List&lt;String&gt;
+- respostas: List&lt;Integer&gt;
+- vezesPerguntado: Long
+- idBancoDeQuestoes: Long
+--
++ getId(): Long
++ setId(id: Long): void
++ getTitulo(): String
++ setTitulo(titulo: String): void
++ getTexto(): String
++ setTexto(texto: String): void
++ getOpcoes(): List&lt;String&gt;
++ setOpcoes(opcoes: List&lt;String&gt;): void
++ getRespostas(): List&lt;Integer&gt;
++ setRespostas(respostas: List&lt;Integer&gt;): void
++ getVezesPerguntado(): Long
++ getVezesPerguntado(vezesPerguntado: Long): void
++ getIdBancoDeQuestoes(): Long
++ setIdBancoDeQuestoes(idBancoDeQuestoes: Long): void
++ hashCode(): int
++ toString(): String
++ equals(obj: Object): boolean</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>60</x>
+      <y>216</y>
+      <w>78</w>
+      <h>120</h>
+    </coordinates>
+    <panel_attributes>_Usuario_
+--
+- id: Long
+- nome: String
+- email: String
+- senhaCriptografada: String
+- tipoUsuario: Enum
+- dataNascimento: Date
+- endereco: String
+- idAdministrador: Long
+- idUsuarioComum: Long
+--
++ login(): void
++ logout(): void
++ setRecursos(): void
++ criarRegistroUsuario(): void
+
++ getId(): Long
++ setId(id: Long): void
++ getNome(): String
++ setNome(nome: String): void
++ getEmail(): String
++ setEmail(email: String): void
++ getSenhaCriptografada(): String
++ setSenhaCriptografada(senhaCriptografada: String): void
++ getTipoUsuario(): Enum
++ setTipoUsuario(tipoUsuario: Enum): void
++ getDataNascimento(): Date
++ setDataNascimento(dataNascimento: Date): void
++ getEndereco(): String
++ setEndereco(endereco: String): void
++ getIdAdministrador(): Long
++ setIdAdministrador(Long idAdministrador): void
++ getIdUsuarioComum(): Long
++ setIdUsuarioComum(idUsuarioComum: Long): void
++ hashCode(): int
++ toString(): String
++ equals(obj: Object): boolean</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>240</x>
+      <y>236</y>
+      <w>70</w>
+      <h>56</h>
+    </coordinates>
+    <panel_attributes>_BancoDeQuestoes_
+--
+- id: Long
+- idQuestionario: Long
+- idAdministrador: Long
+- questoes: List&lt;Questao&gt;
+--
++ getId(): Long
++ setId(id: Long): void
++ getIdQuestionario(): Long
++ setIdQuestionario(idQuestionario: Long): void
++ getIdAdministrador(): Long
++ setIdAdministrador(idAdministrador:Long): void 
++ getQuestoes(): List&lt;Questao&gt;
++ setQuestoes(questoes:List&lt;Questao&gt;): void
++ hashCode(): int
++ toString(): String
++ equals(obj: Object): boolean</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>232</x>
+      <y>308</y>
+      <w>70</w>
+      <h>74</h>
+    </coordinates>
+    <panel_attributes>_Questionario_
+--
+- id: Long
+- nome: String
+- tipoQuestionario: boolean
+- dataInicio: Date
+- dataFim: Date
+- duracao: Long
+--
++ getId(): Long
++ setId(id: Long): void
++ getNome(): String
++ setNome(nome: String): void
++ getTipoQuestionario(): boolean
++ setTipoQuestionario(tipoQuestionario: boolean): void
++ getDataInicio(): Date
++ setDataInicio(): void
++ getDataFim(): Date
++ setDataFim(): void
++ Long getDuracao()
++ void setDuracao(Long duracao)
++ int hashCode()
++ String toString()
++ boolean equals(Object obj)</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>300</x>
+      <y>166</y>
+      <w>36</w>
+      <h>184</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;-
+m1=
+m2=</panel_attributes>
+    <additional_attributes>90.0;10.0;160.0;10.0;160.0;900.0;10.0;900.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>136</x>
+      <y>168</y>
+      <w>114</w>
+      <h>64</h>
+    </coordinates>
+    <panel_attributes>lt=-
+m1=1..1
+m2=1..*</panel_attributes>
+    <additional_attributes>10.0;290.0;440.0;290.0;440.0;10.0;550.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>136</x>
+      <y>242</y>
+      <w>108</w>
+      <h>24</h>
+    </coordinates>
+    <panel_attributes>lt=-
+m1=1..1
+m2=1..*</panel_attributes>
+    <additional_attributes>10.0;10.0;260.0;10.0;260.0;90.0;520.0;90.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>136</x>
+      <y>266</y>
+      <w>100</w>
+      <h>82</h>
+    </coordinates>
+    <panel_attributes>lt=-
+m1=1..*
+m2=1..1</panel_attributes>
+    <additional_attributes>480.0;380.0;180.0;380.0;180.0;10.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>264</x>
+      <y>290</y>
+      <w>10</w>
+      <h>22</h>
+    </coordinates>
+    <panel_attributes>lt=-
+m1=1..1
+m2=1..1</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;90.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>272</x>
+      <y>218</y>
+      <w>10</w>
+      <h>22</h>
+    </coordinates>
+    <panel_attributes>lt=-
+m1=1..*
+m2=1..1</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;90.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>338</x>
+      <y>246</y>
+      <w>90</w>
+      <h>30</h>
+    </coordinates>
+    <panel_attributes>_RegistroQuestionario_
+--
+- questionario: Questionario
+- bancoDeQuestoes: BancoDeQuestoes
+--
++ getQuestionario(): Questionario
++ setQuestionario(questionario: Questionario): void
++ getBancoDeQuestoes(): BancoDeQuestoes
++ setBancoDeQuestoes(bancoDeQuestoes: BancoDeQuestoes): void
++ toString(): String</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>60</x>
+      <y>136</y>
+      <w>80</w>
+      <h>54</h>
+    </coordinates>
+    <panel_attributes>_ConclusaoQuestao_
+--
+- idConclusaoQuestao: Long
+- idUsuario: Long
+- idQuestao: Long
+- dataConclusao: Date
+--
++ getIdConclusaoQuestao(): Long
++ setIdConclusaoQuestao(Long: idConclusaoQuestao): void
++ getIdUsuario(): Long
++ setIdUsuario(Long: idUsuario): void
++ getIdQuestao(): Long
++ getDataConclusao(): Date
++ setDataConclusao(Date: dataConclusao): void
++ int hashCode()
++ String toString()
++ boolean equals(Object obj)</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>96</x>
+      <y>188</y>
+      <w>10</w>
+      <h>32</h>
+    </coordinates>
+    <panel_attributes>lt=-
+m1=1..1
+m2=1..*</panel_attributes>
+    <additional_attributes>10.0;140.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>138</x>
+      <y>148</y>
+      <w>112</w>
+      <h>8</h>
+    </coordinates>
+    <panel_attributes>lt=-
+m1=1..1
+m2=1..*</panel_attributes>
+    <additional_attributes>540.0;10.0;10.0;10.0</additional_attributes>
+  </element>
+</diagram>
